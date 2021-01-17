@@ -7,16 +7,20 @@ import { BrowserRouter } from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css';
 import AuthProvider from './providers/AuthProvider';
 import { initMiddleware } from 'devise-axios';
+import BuildingProvider from './providers/BuildingProvider';
 
 initMiddleware();
 
 ReactDOM.render(
   <React.StrictMode>
     <AuthProvider>
+    <BuildingProvider>
       <BrowserRouter>
         <App />
       </BrowserRouter>
+      </BuildingProvider>
     </AuthProvider>
+    
   </React.StrictMode>,
   document.getElementById('root')
 );

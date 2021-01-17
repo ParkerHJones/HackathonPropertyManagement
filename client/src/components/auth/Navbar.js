@@ -3,6 +3,7 @@ import { AuthConsumer } from "../../providers/AuthProvider";
 import { Menu } from 'semantic-ui-react';
 import { Link, withRouter } from 'react-router-dom';
 
+
 class Navbar extends Component {
   
   rightNavItems = () => {
@@ -49,9 +50,20 @@ class Navbar extends Component {
               id='home'
               active={this.props.location.pathname === '/'}
             />
+            <Link to='/management'>
+            <Menu.Item
+              name='management'
+              id='management'
+              active={this.props.location.pathname === '/management'}
+            />
+          </Link>
           </Link>
             { this.rightNavItems() }
         </Menu>
+        
+
+          
+            { this.rightNavItems() }
       </div>
     )
   }
